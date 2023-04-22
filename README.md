@@ -3,10 +3,10 @@
 # Example infrastructure-modules for Terragrunt
 
 This repo, along with the [terragrunt-infrastructure-live-example 
-repo](https://github.com/gruntwork-io/terragrunt-infrastructure-live-example), show an example file/folder structure
-you can use with [Terragrunt](https://github.com/gruntwork-io/terragrunt) to keep your 
+repo](https://github.com/tnn-gruntwork-io/terragrunt-infrastructure-live-example), show an example file/folder structure
+you can use with [Terragrunt](https://github.com/tnn-gruntwork-io/terragrunt) to keep your 
 [Terraform](https://www.terraform.io) code DRY. For background information, check out the [Keep your Terraform code
-DRY](https://github.com/gruntwork-io/terragrunt#keep-your-terraform-code-dry) section of the Terragrunt documentation.
+DRY](https://github.com/tnn-gruntwork-io/terragrunt#keep-your-terraform-code-dry) section of the Terragrunt documentation.
 
 This repo contains the following example code:
 
@@ -30,7 +30,7 @@ input variables of that module:
 ```hcl
 # Use Terragrunt to download the module code
 terraform {
-  source = "git::git@github.com:gruntwork-io/terragrunt-infrastructure-modules-example.git//path/to/module?ref=v0.0.1"
+  source = "git::git@github.com:tnn-gruntwork-io/terragrunt-infrastructure-modules-example.git//path/to/module?ref=v0.0.1"
 }
 
 # Fill in the variables for that module
@@ -43,22 +43,22 @@ inputs = {
 (*Note: the double slash (`//`) in the `source` URL is intentional and required. It's part of Terraform's Git syntax 
 for [module sources](https://www.terraform.io/docs/modules/sources.html).*)
 
-You then run [Terragrunt](https://github.com/gruntwork-io/terragrunt), and it will download the source code specified 
+You then run [Terragrunt](https://github.com/tnn-gruntwork-io/terragrunt), and it will download the source code specified 
 in the `source` URL into a temporary folder, copy your `terragrunt.hcl` file into that folder, and run your Terraform 
 command in that folder: 
 
 ```
 > terragrunt apply
 [terragrunt] Reading Terragrunt config file at terragrunt.hcl
-[terragrunt] Downloading Terraform configurations from git::git@github.com:gruntwork-io/terragrunt-infrastructure-modules-example.git//path/to/module?ref=v0.0.1
+[terragrunt] Downloading Terraform configurations from git::git@github.com:tnn-gruntwork-io/terragrunt-infrastructure-modules-example.git//path/to/module?ref=v0.0.1
 [terragrunt] Copying files from . into .terragrunt-cache
 [terragrunt] Running command: terraform apply
 [...]
 ```
 
 Check out the [terragrunt-infrastructure-live-example 
-repo](https://github.com/gruntwork-io/terragrunt-infrastructure-live-example) for examples and the [Keep your Terraform 
-code DRY documentation](https://github.com/gruntwork-io/terragrunt#keep-your-terraform-code-dry) for more info.
+repo](https://github.com/tnn-gruntwork-io/terragrunt-infrastructure-live-example) for examples and the [Keep your Terraform 
+code DRY documentation](https://github.com/tnn-gruntwork-io/terragrunt#keep-your-terraform-code-dry) for more info.
 
 
 
@@ -103,7 +103,7 @@ When you're done testing the changes locally, here is how you release a new vers
 
 ## Monorepo vs. polyrepo
 
-This repo is an example of a *monorepo*, where you have multiple modules in a single repository. There are benefits and drawbacks to using a monorepo vs. using a *polyrepo* - one module per repository. Which you choose depends on your tooling, how you build/test Terraform modules, and so on. Regardless, the [live repo](https://github.com/gruntwork-io/terragrunt-infrastructure-live-example) will consume the modules in the same way: a reference to a Git release tag in a `terragrunt.hcl` file.
+This repo is an example of a *monorepo*, where you have multiple modules in a single repository. There are benefits and drawbacks to using a monorepo vs. using a *polyrepo* - one module per repository. Which you choose depends on your tooling, how you build/test Terraform modules, and so on. Regardless, the [live repo](https://github.com/tnn-gruntwork-io/terragrunt-infrastructure-live-example) will consume the modules in the same way: a reference to a Git release tag in a `terragrunt.hcl` file.
 
 ### Advantages of a monorepo for Terraform modules
 
